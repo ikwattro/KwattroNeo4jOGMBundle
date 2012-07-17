@@ -8,7 +8,7 @@
     <parameters>
         <parameter key="kwattro_neo4j.client.class">Everyman\Neo4j\Client</parameter>
         <parameter key="kwattro_neo4j.meta_repository.class">HireVoice\Neo4j\MetaRepository</parameter>
-        <parameter key="kwattro_neo4j.graph_manager.class">Kwattro\Neo4j\GraphManager\GraphManager</parameter>
+        <parameter key="kwattro_neo4j.graph_manager.class">Kwattro\Neo4jBundle\GraphManager\GraphManager</parameter>
     </parameters>
 
     <services>
