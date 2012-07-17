@@ -43,6 +43,29 @@ kwattro_neo4j:
     port: 7474
 ````
 
+## Usage
+
+The usage is a little bit like the Doctrine ORM, to access the graph you just need to call the graph manager service :
+
+````
+$graph = $this->container->get('kwattro_neo4j.graph_manager');
+
+// Create a new node
+$user = new User();
+$user->setUsername('ikwattro');
+$user->setFullName('Christophe Willemsen');
+$graph->persist($user);
+$graph->flush();
+
+// Retrieving node
+$repo = $graph->getRepository('Acme\UserBundle\Entity\User');
+$user = $repo->findOneByFullname('Christophe Willemsen');
+
+// You can then pass the object to your views layer and use it like a simple Doctrine object
+
+````
+
+
 ## Contributors
 
 Christophe Willemsen : [@kwattro](https://github.com/kwattro)
