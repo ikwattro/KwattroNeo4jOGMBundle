@@ -1,0 +1,25 @@
+{
+    "name": "kwattro/neo4j-ogm-bundle",
+    "type": "symfony-bundle",
+    "description": "This Bundle implements the PHP Neo4j OGM",
+    "keywords": ["ogm", "neo4j", "graph database", "node"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Christophe Willemsen",
+            "homepage": "https://github.com/kwattro"
+        }
+    ],
+
+    "require": {
+        "php":                      ">=5.3.3",
+        "lphuberdeau/Neo4j-PHP-OGM":          "dev-master",
+        "symfony/framework-bundle": ">=2.0.14,<2.2-dev"
+    },
+
+    "autoload": {
+        "psr-0": { "Kwattro\\Neo4jBundle": "" }
+    },
+
+    "target-dir": "Kwattro/Neo4jBundle"
+}
