@@ -8,22 +8,21 @@
     <parameters>
         <parameter key="kwattro_neo4j.client.class">Everyman\Neo4j\Client</parameter>
         <parameter key="kwattro_neo4j.meta_repository.class">HireVoice\Neo4j\MetaRepository</parameter>
-        <parameter key="kwattro_neo4j.host">192.168.43.89</parameter>
-        <parameter key="kwattro_neo4j.port">7474</parameter>
+        <parameter key="kwattro_neo4j.graph_manager.class">Kwattro\Neo4j\GraphManager\GraphManager</parameter>
     </parameters>
 
     <services>
 
-    <service id="kwattro_neo4j.graph.client" class="Everyman\Neo4j\Client">
+    <service id="kwattro_neo4j.graph.client" class="%kwattro_neo4j.client.class%">
         <argument>%kwattro_neo4j.host%</argument>
         <argument>%kwattro_neo4j.port%</argument>
     </service>
 
-    <service id="kwattro_neo4j.graph.meta_repository" class="HireVoice\Neo4j\MetaRepository">
+    <service id="kwattro_neo4j.graph.meta_repository" class="%kwattro_neo4j.meta_repository.class%">
         <argument type="service" id="annotations.reader" />
     </service>
     
-        <service id="kwattro_neo4j.graph_manager" class="Kwattro\Neo4jBundle\GraphManager\GraphManager">
+        <service id="kwattro_neo4j.graph_manager" class="%kwattro_neo4j.graph_manager.class%">
             <argument type="service" id="kwattro_neo4j.graph.client" />
             <argument type="service" id="kwattro_neo4j.graph.meta_repository" />
         </service>
