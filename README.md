@@ -1,9 +1,15 @@
-Neo4j Object Graph Mapper Bundle for Symfony
-============================================
+Neo4j Object Graph Mapper Bundle for Symfony - WIP
+==================================================
 
 ## Neo4j OGM
 
-This bundle lets you make use of the Neo4j Graph Database REST API inside your symfony applications.
+This bundle lets you make use of the Neo4j Graph Database REST API inside your symfony applications.  
+  
+It is momently a WIP as it relies on the [Neo4j-PHP-OGM](https://github.com/lphuberdeau/Neo4j-PHP-OGM) from [lphuberdeau](https://github.com/lphuberdeau) that gives integration with Doctrine Common.  
+
+My main focus is momently the User Management integrated with FOSUB and Neo4j, I will come on this bundle later.  
+
+Contributions for adding compiler to configuration and travis love would be really appreciated !
 
 ## Requirements
 
