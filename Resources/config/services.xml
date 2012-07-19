@@ -9,6 +9,7 @@
         <parameter key="kwattro_neo4j.client.class">Everyman\Neo4j\Client</parameter>
         <parameter key="kwattro_neo4j.meta_repository.class">HireVoice\Neo4j\MetaRepository</parameter>
         <parameter key="kwattro_neo4j.graph_manager.class">Kwattro\Neo4jBundle\GraphManager\GraphManager</parameter>
+        <parameter key="kwattro_neo4j.proxy_dir">%kernel.cache_dir%/doctrine/neo4j/Proxies</parameter>
     </parameters>
 
     <services>
@@ -25,6 +26,7 @@
         <service id="kwattro_neo4j.graph_manager" class="%kwattro_neo4j.graph_manager.class%">
             <argument type="service" id="kwattro_neo4j.graph.client" />
             <argument type="service" id="kwattro_neo4j.graph.meta_repository" />
+            <argument>%kwattro_neo4j.proxy_dir%</argument>
         </service>
     </services>
 </container>
