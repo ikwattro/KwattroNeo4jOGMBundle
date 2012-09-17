@@ -13,7 +13,7 @@
 
     "require": {
         "php":                      ">=5.3.3",
-        "lphuberdeau/Neo4j-PHP-OGM":          "dev-master",
+        "hirevoice/neo4jphp-ogm":   "dev-master",
         "symfony/framework-bundle": ">=2.0.14,<2.2-dev"
     },
 
