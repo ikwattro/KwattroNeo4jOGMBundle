@@ -3,20 +3,19 @@
 namespace Kwattro\Neo4jBundle\GraphManager;
 
 use HireVoice\Neo4j\EntityManager;
-use HireVoice\Neo4j\Meta\Repository as MetaRepository;
-use HireVoice\Neo4j\Proxy\Factory as ProxyFactory;
-use Everyman\Neo4j\Client;
+use HireVoice\Neo4j\Configuration;
 
 class GraphManager extends EntityManager
 {
-
-	protected $manager;
-
-	protected $metaRepository;
-
-	public function __construct(Client $client, MetaRepository $metaRepository, $proxy_dir, $configuration = null)
+	public function __construct($host, $port, $proxy_dir, $username = null, $password = null)
 	{
-		$this->proxyFactory = new ProxyFactory($proxy_dir);
+        $configuration = new Configuration(array(
+            'host' => $host,
+            'port' => $port,
+            'proxy_dir' => $proxy_dir,
+            'username' => $username,
+            'password' => $password,
+        ));
 		parent::__construct($configuration);
-	}
+    }
 }
