@@ -1,5 +1,5 @@
 {
-    "name": "expio/neo4j-ogm-bundle",
+    "name": "kwattro/neo4j-ogm-bundle",
     "type": "symfony-bundle",
     "description": "This Bundle implements the PHP Neo4j OGM",
     "keywords": ["ogm", "neo4j", "graph database", "node"],
@@ -13,7 +13,7 @@
 
     "require": {
         "php":                      ">=5.3.3",
-        "expio/neo4jphp-ogm":   "dev-master",
+        "hirevoice/neo4jphp-ogm":   "dev-master",
         "symfony/framework-bundle": ">=2.0.14,<2.2-dev"
     },
 
