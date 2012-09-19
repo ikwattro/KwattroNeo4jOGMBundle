@@ -1,31 +1,18 @@
 <?xml version="1.0" ?>
 
 <container xmlns="http://symfony.com/schema/dic/services"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
-    
     <parameters>
-        <parameter key="kwattro_neo4j.client.class">Everyman\Neo4j\Client</parameter>
-        <parameter key="kwattro_neo4j.meta_repository.class">HireVoice\Neo4j\MetaRepository</parameter>
         <parameter key="kwattro_neo4j.graph_manager.class">Kwattro\Neo4jBundle\GraphManager\GraphManager</parameter>
         <parameter key="kwattro_neo4j.proxy_dir">%kernel.cache_dir%/doctrine/neo4j/Proxies</parameter>
     </parameters>
 
     <services>
-
-    <service id="kwattro_neo4j.graph.client" class="%kwattro_neo4j.client.class%">
-        <argument>%kwattro_neo4j.host%</argument>
-        <argument>%kwattro_neo4j.port%</argument>
-    </service>
-
-    <service id="kwattro_neo4j.graph.meta_repository" class="%kwattro_neo4j.meta_repository.class%">
-        <argument type="service" id="annotations.reader" />
-    </service>
-    
         <service id="kwattro_neo4j.graph_manager" class="%kwattro_neo4j.graph_manager.class%">
-            <argument type="service" id="kwattro_neo4j.graph.client" />
-            <argument type="service" id="kwattro_neo4j.graph.meta_repository" />
+            <argument>%kwattro_neo4j.host%</argument>
+            <argument>%kwattro_neo4j.port%</argument>
             <argument>%kwattro_neo4j.proxy_dir%</argument>
         </service>
     </services>
